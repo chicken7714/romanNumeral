@@ -1,2 +1,10 @@
 # romanNumeral
 Roman Numeral Coding Challenge
+
+## Thought Process
+I first wanted to tackle the roman numeral to decimal converter. My initial thought was that I would need to create some kind of tokenizer in order to detect for when I would need to utilize the subtractive notation. That seemed endlessly complex for how simple the problem was, so I then realized that you could just use rule #2 from the specs and check if the numeral in front of your current numeral represents a number that is larger, then you would use the subtractive rule. The rest of the converter was pretty easy to build. You just check at each character if the next character is larger, if so then do the subtraction and move the pointer forward 2 characters. If that's not the case, then just add the character's value to the running sum. 
+
+The decimal to roman was a little more tricky. I initially didn't want to use a dictionary with each of the subractive values (900, 400, 90, 40, 9, 4), because I thought there would probably be a more elegant soltion without doing that. But I realized that it would make the problem a lot less complex if I just included those in the value dictionaries. I realized that you could basically use a greedy algorithm and just subtract off the largest possible value from the dictionary and add the corresponding roman numeral(s) to a string. The greedy algorithm is correct as long as you include the subtractive values (900, 400, etc.). If you didn't include that in your data structure, then you would have to go back through the string afterwards and replace certain substrings (For example 1400 might generate MCCCC. You would need to have the program detect instances of CCCC and replace it with CD). That would also work, you would just need to have a bunch of lines of code with calls to the .replace() method. 
+
+## Notes
+The initial functions took me 30 minutes to think through and write. I tested the code, refactored it, and created the simple user interface in another 30 minutes. I wish I had a little bit more time to implement a fun little GUI.
