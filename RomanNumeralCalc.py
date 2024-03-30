@@ -35,9 +35,11 @@ class RomanNumeralCalc:
         ROMAN_DECIMAL = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 
         roman_string = ""
-        # You can basically use this "greedy" algorithm to find the
+        # Algorithm will go through the number and subtract as many instances of a roman_numeral combo as possible
+        # For example, with 2400, it will first pull out 2 Ms and add that to roman_string,
+        # then it will pull out a CD.
         for number in ROMAN_DECIMAL:
-            num_letters = decimal // number
-            roman_string += num_letters * ROMAN_LETTERS[number]
+            num_instances_to_add = decimal // number
+            roman_string += num_instances_to_add * ROMAN_LETTERS[number]
             decimal = decimal % number
         return roman_string

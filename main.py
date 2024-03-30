@@ -8,10 +8,10 @@ if __name__ == "__main__":
         user_input = input("Please input either a roman numeral expression or a decimal number (type \"quit\" to "
                            "quit): ")
         if roman_calc.input_is_valid(user_input):
-            print("Converting " + user_input + " to decimal: ")
+            print(user_input + " converted to decimal: ")
             print(roman_calc.roman_to_decimal(user_input))
         elif user_input.isdigit():
-            print("Converting " + user_input + " to roman numerals: ")
+            print(user_input + " converted to roman numerals: ")
             print(roman_calc.decimal_to_roman(int(user_input)))
         elif user_input == "quit":
             pass
