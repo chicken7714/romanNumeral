@@ -1,0 +1,4 @@
+([('main',
+   '/Users/henryandrus/Hello '
+   'World/playground/romanNumeral/romanNumeral/dist/main',
+   'EXECUTABLE')],)
